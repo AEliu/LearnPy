@@ -11,9 +11,12 @@ class student():
         if item == 'sex':
             print("{} is a boy!".format(self.name))
         raise AttributeError('has no this attr')
+    def __setattr__(self, key, value):
+        pass
+
 
 xming = student('Xiao ming', 18)
 print(xming)
 xming.sex
-xming.diao
+xming.diao = 4
 del xming
