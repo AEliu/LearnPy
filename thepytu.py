@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+import json
+
 the_world_is_flat = True
 if the_world_is_flat:
     print("Be careful not to fall off!")  # this is the first comment
@@ -141,4 +143,26 @@ f = make_incrementor(43)
 print(f(2))
 
 pairs = [(1, 'one'), (2, 'two'), (3, 'three'), (4, 'four')]
-print(pairs.sort(key=lambda pair: pair[1][1]))
+pairs.sort(key=lambda pair: pair[1][1])
+print(pairs)
+
+squares = list(map(lambda x: x**2, range(10)))
+print(squares)
+
+squares = [x**2 for x in range(10)]
+print(squares)
+
+with open('test', 'w+') as f:
+    x = json.dumps([1, 'hello'])
+    print(x)
+    json.dump(x, f)
+    # y = json.load(f)
+    # print(y)
+f.close()
+
+while True:
+    try:
+        x = int(input('Pls enter a number: '))
+        break
+    except ValueError:
+        print("Oop! That was no valid number. Try again...")
