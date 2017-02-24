@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 the_world_is_flat = True
 if the_world_is_flat:
-    print("Be careful not to fall off!") #this is the first comment
+    print("Be careful not to fall off!")  # this is the first comment
 
 text = "# This is not a comment because it's inside quotes."
 print(text)
@@ -81,8 +81,64 @@ print(list(range(10)))
 for n in range(2, 100):
     for x in range(2, n):
         if n % x == 0:
-            print(n, 'equals', x, '*', n//x)
+            print(n, 'equals', x, '*', n // x)
             break
     else:
         print(n, ' is a prime number.')
 
+
+def fib(n):
+    """Print a Fibonacci series up to n"""
+    a, b = 0, 1
+    while a < n:
+        print(a, end='\t')
+        a, b = b, a + b
+    print()
+
+
+fib(20000)
+f = fib
+f(2000)
+print(type(f), type(fib))
+
+
+def ask_ok(prompt, retries=4, reminder='Please try again!'):
+    """A function with default argument values"""
+    while True:
+        ok = input(prompt)
+        if ok in ('y', 'ye', 'yes'):
+            return True
+        if ok in ('n', 'no', 'nop', 'nope'):
+            return False
+        retries = retries - 1
+        if retries < 0:
+            raise ValueError('invalid user response')
+        print(reminder)
+
+
+# ask_ok('Do you want biuld a snowman?', 1)
+
+def concat(*args, sep="/"):
+    return sep.join(args)
+
+
+print(concat("earth", "asian", "china"))
+
+# args_ok = ('Do you?\n', 2)
+# ask_ok(*args_ok)
+
+def parrot(voltage, state='a stiff', action='voom'):
+    print("-- This parrot wouln't", action, end=' ')
+    print("If you put", voltage, "volts through it.", end=' ')
+    print("E's", state, "!")
+
+d = {"voltage": "four million", "state": "bleedin' demised", "action": "VOOM"}
+parrot(**d)
+
+def make_incrementor(n):
+    return lambda x: x + n
+f = make_incrementor(43)
+print(f(2))
+
+pairs = [(1, 'one'), (2, 'two'), (3, 'three'), (4, 'four')]
+print(pairs.sort(key=lambda pair: pair[1][1]))
