@@ -33,3 +33,20 @@ print(word[0:2])
 print(word[2:5])
 print(word[0:2] + word[2:])
 print(len(word))
+
+squares = [1, 4, 9, 16, 25]
+print(squares)
+squares.append(36)
+squares.append(7 ** 2)
+print(squares)
+squares[0:2] = []
+print(squares)
+print(len(squares))
+
+a = ['a', 'b', 'c']
+n = [1, 2, 3]
+x = [a, n]
+print(x)
+print(x[0])
+print(x[0][1])
+
