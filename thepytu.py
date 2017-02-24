@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import json
+import json, re
 
 the_world_is_flat = True
 if the_world_is_flat:
@@ -166,3 +166,8 @@ while True:
         break
     except ValueError:
         print("Oop! That was no valid number. Try again...")
+
+html = r"Rango is a lovely pet. We all love it.So does Rango think!"
+print(html)
+fa = re.findall(r'R.*?o', html)
+print(fa)
