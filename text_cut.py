@@ -19,3 +19,4 @@ st = '\n'.join(sentence)
 with open('end.txt', 'w',encoding='utf-8' ) as f:
     f.write(st)
 f.close()
+# o
